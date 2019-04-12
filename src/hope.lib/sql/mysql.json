@@ -1,0 +1,49 @@
+[
+  {
+    "Name": "User",
+    "Fields": [
+      { "Name": "ID", "Type": "int64"},
+      { "Name": "Name", "Type": "string",  "DBType": "varchar(20)"},
+      { "Name": "Level", "Type": "int16",  "Default": "1"}
+    ],
+    "PrimaryKey": ["ID"],
+    "ShardKey": ["ID"],
+    "indexes": [],
+    "Gets": [
+      {
+        "Name": "GetByID",
+        "Param": ["ID"]
+      }
+    ],
+    "Finds": [
+      {
+        "Name": "GetByLevel",
+        "Param": ["Level"]
+      }
+    ]
+  },
+  {
+    "Name": "Item",
+    "Fields": [
+      { "Name": "ID", "Type": "int64"},
+      { "Name": "PID", "Type": "int64"},
+      { "Name": "Type", "Type": "string",  "DBType": "varchar(20)"},
+      { "Name": "Count", "Type": "int16",  "Default": "1"}
+    ],
+    "PrimaryKey": ["ID"],
+    "ShardKey": ["PID"],
+    "indexes": [],
+    "Gets": [
+      {
+        "Name": "GetByID",
+        "Param": ["ID"]
+      }
+    ],
+    "Finds": [
+      {
+        "Name": "Get",
+        "Param": ["PID"]
+      }
+    ]
+  }
+]
