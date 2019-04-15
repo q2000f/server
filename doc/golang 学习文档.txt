@@ -1,0 +1,53 @@
+https://blog.csdn.net/D_Guco/article/details/79179573
+https://go101.org/article/101.html
+https://blog.csdn.net/D_Guco/article/details/79179573
+How to Gracefully Close Channels
+https://go101.org/article/channel-closing.html
+go advice
+https://github.com/cristaloleg/go-advices
+
+go get github.com/sony/sonyflake
+
+º∆À„∆˜
+À¿À¯ºÏ≤È
+https://github.com/nickng/dingo-hunter
+https://github.com/nickng/gong
+
+-----------------------------------------------------
+json
+github.com/json-iterator/go
+https://www.jianshu.com/p/8893f0879ed2
+
+go build -ldflags °∞-X main.buildTime=$(date +°±%Y.%m.%d.%H%M%S°±) -X main.commitHash=$(git log ®Cpretty=format:°Ø%h°Ø -n 1)°±
+
+https://vitess.io/docs/
+
+//static check report
+https://github.com/gojp/goreportcard
+
+go pdf writer
+https://github.com/balacode/one-file-pdf
+
+log
+https://github.com/Sirupsen/logrus
+https://github.com/cihub/seelog
+
+excel
+https://github.com/360EntSecGroup-Skylar/excelize
+
+monitor cpu mem...
+https://github.com/square/inspect/tree/master/os
+
+https://github.com/xiaonanln/goworld/
+
+//id
+github.com/bwmarrin/snowflake
+
+server
+https://github.com/Cyinx/einx
+
+actor game
+https://github.com/bobohume/gonet
+
+ppt
+https://github.com/rfyiamcool/share_ppt
