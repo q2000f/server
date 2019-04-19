@@ -19,13 +19,14 @@ type HttpResponse struct {
 
 func HttpDo(header HttpHeader, data []byte) (result string) {
 	defer func() {
-		if r := recover(); r != nil {
-			response := HttpResponse{
-				ErrorCode: code.LogicPanic,
-			}
-			bytes, _ := json.Marshal(response)
-			result = string(bytes)
-		}
+		//if r := recover(); r != nil {
+		//	response := HttpResponse{
+		//		ErrorCode: code.LogicPanic,
+		//	}
+		//	bytes, _ := json.Marshal(response)
+		//	result = string(bytes)
+		//	log.Println(r)
+		//}
 	}()
 	log.Print("opcode:", header.Opcode, " sid:", header.SID, " host:", header.Host)
 	apiConfig, ok := handlers[header.Opcode]

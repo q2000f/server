@@ -1,11 +1,20 @@
-package logic
+package common
 
-import "sync"
+import (
+	"sync"
+)
+
+type Player struct {
+	ID string
+	Name string
+	Level string
+}
 
 type User struct {
-	sync.Locker
+	sync.RWMutex
 	ID string
 	State UserState
+	Player Player
 }
 
 type UserState int
@@ -16,14 +25,14 @@ const (
 	UserState_OffLine
 )
 
-var users sync.Map
+var Users sync.Map
 
 func GetUser(id string) *User {
-	user, ok := users.Load(id)
+	user, ok := Users.Load(id)
 	if ok {
 		return user.(*User)
 	}
 	newUser := &User{ID:id, State: UserState_Init}
-	user, _ = users.LoadOrStore(id, newUser)
+	user, _ = Users.LoadOrStore(id, newUser)
 	return user.(*User)
 }

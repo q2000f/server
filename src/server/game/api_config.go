@@ -19,6 +19,10 @@ func init() {
 			"login",
 			handler.API_Login,
 		},
+		{
+			"getPlayer",
+			handler.API_GetPlayer,
+		},
 	}
 
 	handlers = map[string]ApiConfig{}
