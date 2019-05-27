@@ -1,27 +1,34 @@
 package game
 
 import (
+	"server/game/common"
 	"server/game/handler"
 )
 
-type Callback func(data []byte) (int64, interface{})
+type Callback func(ctx common.Context, data []byte) (int64, interface{})
 type ApiConfig struct {
-	Opcode string
-	Do Callback
+	Opcode           string
+	Do               Callback
+	SkipCheckSession bool
 }
 
 var handlers map[string]ApiConfig
 var apiConfigs []ApiConfig
 
 func init() {
-	apiConfigs = []ApiConfig {
+	apiConfigs = []ApiConfig{
 		{
-			"login",
-			handler.API_Login,
+			Opcode:           "login",
+			Do:               handler.API_Login,
+			SkipCheckSession: true,
 		},
 		{
-			"getPlayer",
-			handler.API_GetPlayer,
+			Opcode: "getPlayer",
+			Do:     handler.API_GetPlayer,
+		},
+		{
+			Opcode: "createPlayer",
+			Do:     handler.API_CreatePlayer,
 		},
 	}
 

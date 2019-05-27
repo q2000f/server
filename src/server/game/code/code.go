@@ -5,4 +5,5 @@ const (
 	Fail
 	InvalidOpcode
 	LogicPanic
+	Retry
 )

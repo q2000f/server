@@ -4,12 +4,13 @@ import (
 	"encoding/json"
 	"log"
 	"server/game/code"
+	"server/game/common"
 )
 
 type HttpHeader struct {
 	Opcode string
 	Host   string
-	SID    string
+	SID    uint64
 }
 
 type HttpResponse struct {
@@ -38,7 +39,18 @@ func HttpDo(header HttpHeader, data []byte) (result string) {
 		return string(bytes)
 	}
 
-	errCode, ret := apiConfig.Do(data)
+	var sess *common.Session
+	if !apiConfig.SkipCheckSession {
+		sess = common.GSessionMap.GetSession(header.SID)
+		if sess == nil {
+			log.Println("error sess == nil")
+			return
+		}
+	}
+
+	ctx := common.Context{Sess: sess}
+
+	errCode, ret := apiConfig.Do(ctx, data)
 	response := HttpResponse{
 		ErrorCode: errCode,
 	}
