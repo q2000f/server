@@ -8,8 +8,8 @@ https://github.com/cristaloleg/go-advices
 
 go get github.com/sony/sonyflake
 
-¼ÆËãÆ÷
-ËÀËø¼ì²é
+è®¡ç®—å™¨
+æ­»é”æ£€æŸ¥
 https://github.com/nickng/dingo-hunter
 https://github.com/nickng/gong
 
@@ -18,7 +18,7 @@ json
 github.com/json-iterator/go
 https://www.jianshu.com/p/8893f0879ed2
 
-go build -ldflags ¡°-X main.buildTime=$(date +¡±%Y.%m.%d.%H%M%S¡±) -X main.commitHash=$(git log ¨Cpretty=format:¡¯%h¡¯ -n 1)¡±
+go build -ldflags â€œ-X main.buildTime=$(date +â€%Y.%m.%d.%H%M%Sâ€) -X main.commitHash=$(git log â€“pretty=format:â€™%hâ€™ -n 1)â€
 
 https://vitess.io/docs/
 
@@ -52,3 +52,8 @@ https://github.com/xiaonanln/goworld
 
 ppt
 https://github.com/rfyiamcool/share_ppt
+
+https://github.com/rfyiamcool/share_ppt
+
+golang
+https://www.kancloud.cn/liupengjie/go/1010276
