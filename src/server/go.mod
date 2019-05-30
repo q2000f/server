@@ -2,7 +2,12 @@ module server
 
 go 1.12
 
-require github.com/gin-gonic/gin v1.4.0
+require (
+	github.com/gin-gonic/gin v1.4.0
+	util v0.0.0
+)
+
+replace util v0.0.0 => ../util
 
 replace (
 	golang.org/x/build => github.com/golang/build v0.0.0-20190527235711-611bf7030327
