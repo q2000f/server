@@ -57,3 +57,5 @@ https://github.com/rfyiamcool/share_ppt
 
 golang
 https://www.kancloud.cn/liupengjie/go/1010276
+
+开启go mod linux下： export GO111MODULE=on win下： set GO111MODULE=on

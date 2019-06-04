@@ -10,8 +10,7 @@ import (
 
 //example
 //func main() {
-//	var myLog Loger
-//  myLog.Init("./data", "item")
+//	log := NewLogger("./data", "item")
 //	myLog.Println("hello world")
 //}
 const (
@@ -132,7 +131,7 @@ func (c *Logger) Println(level int, v ...interface{}) {
 		return
 	}
 
-	fileName, line, funcName := GetStackInfo(2)
+	fileName, line, funcName := GetStackInfo(3)
 	msg := fmt.Sprint(fileName, ":", line, ":"+funcName+" ") + fmt.Sprint(v...)
 
 	//screen
